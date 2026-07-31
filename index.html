@@ -15,7 +15,7 @@
   <meta name="description" content="Convite oficial para o evento O Novo Jogo Tributário no Brasil: Reforma do Consumo, Renda e impactos práticos para empresários em 2026. Niterói/RJ.">
   <meta name="keywords" content="Reforma Tributaria, Direito Tributario, CTSADV, Colégio Objetivo Camboinhas, Niterói, Holdings Familiares, Contabilidade">
 
-  <!-- Google Fonts: Playfair Display (Luxo/Editorial) & Plus Jakarta Sans (Moderno) -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -28,11 +28,11 @@
 </head>
 <body>
 
-  <!-- Floating Sticky Navigation Header -->
+  <!-- Header Institucional Fixo -->
   <header class="navbar-sticky">
     <div class="container navbar-container">
       <div class="nav-brand-badge">
-        <span class="dot-live"></span> SUMMIT DE DIREITO & CONTABILIDADE 2026
+        <span class="dot-live"></span> SUMMIT TRIBUTÁRIO & CONTÁBIL 2026
       </div>
       <div class="nav-logos">
         <img src="Nova Logo CTSADV.png" alt="CTSADV Advogados" class="nav-logo logo-ctsadv">
@@ -42,266 +42,252 @@
     </div>
   </header>
 
-  <!-- Hero Section (Editorial Luxury Header) -->
+  <!-- Hero Section Dividida (Texto + Imagem de Alto Impacto) -->
   <section class="hero-section">
-    <div class="hero-bg-texture"></div>
     <div class="container">
-      <div class="hero-header-box">
-        <div class="hero-tag-pill">
-          <i class="fa-solid fa-crown"></i> ENCONTRO EXCLUSIVO PARA EMPRESÁRIOS & GESTORES
-        </div>
-        
-        <h1 class="hero-title">
-          O Novo Jogo Tributário<br>
-          <span class="gold-gradient-text">no Brasil</span>
-        </h1>
-        
-        <p class="hero-subtitle">
-          COMO PREPARAR SUA EMPRESA PARA A NOVA REALIDADE FISCAL
-        </p>
+      <div class="hero-split-grid">
+        <!-- Coluna Esquerda: Textos & CTAs -->
+        <div class="hero-text-side">
+          <div class="hero-tag-pill">
+            <i class="fa-solid fa-crown"></i> ENCONTRO EXCLUSIVO PARA EMPRESÁRIOS & GESTORES
+          </div>
 
-        <p class="hero-description">
-          Reforma Tributária do Consumo, Reforma da Renda e os impactos práticos decisivos para a competitividade e proteção patrimonial dos negócios em 2026.
-        </p>
+          <h1 class="hero-title">
+            O Novo Jogo Tributário <span class="gold-gradient-text">no Brasil</span>
+          </h1>
 
-        <div class="hero-actions">
-          <button class="btn btn-primary btn-gold glow-effect" onclick="openRSVPModal()">
-            <i class="fa-brands fa-whatsapp"></i> Confirmar Presença (RSVP)
-          </button>
-          <button class="btn btn-secondary" onclick="addToCalendar()">
-            <i class="fa-regular fa-calendar-plus"></i> Adicionar à Agenda
-          </button>
-        </div>
-      </div>
+          <p class="hero-subtitle">
+            COMO PREPARAR SUA EMPRESA PARA A NOVA REALIDADE FISCAL
+          </p>
 
-      <!-- Bento Grid (Informações Rápidas e Regressiva) -->
-      <div class="bento-grid">
-        <!-- Bento Item 1: Data & Horário -->
-        <div class="bento-card card-date">
-          <div class="bento-icon-wrap"><i class="fa-solid fa-calendar-day"></i></div>
-          <div class="bento-content">
-            <span class="bento-label">DATA & HORÁRIO</span>
-            <h3 class="bento-value">27 de Agosto <small>de 2026</small></h3>
-            <p class="bento-sub"><i class="fa-solid fa-clock"></i> Quinta-feira às <strong>19:00h</strong></p>
+          <p class="hero-description">
+            Reforma Tributária do Consumo, Reforma da Renda e os impactos práticos decisivos para a competitividade e proteção patrimonial dos negócios em 2026.
+          </p>
+
+          <div class="hero-actions">
+            <button class="btn btn-primary btn-gold glow-effect" onclick="openRSVPModal()">
+              <i class="fa-brands fa-whatsapp"></i> Confirmar Presença (RSVP)
+            </button>
+            <button class="btn btn-secondary" onclick="addToCalendar()">
+              <i class="fa-regular fa-calendar-plus"></i> Adicionar à Agenda
+            </button>
           </div>
         </div>
 
-        <!-- Bento Item 2: Countdown Timer -->
-        <div class="bento-card card-timer">
-          <span class="bento-label"><i class="fa-solid fa-hourglass-half"></i> CONTAGEM REGRESSIVA</span>
-          <div class="countdown-timer" id="countdown">
-            <div class="time-block">
-              <span class="time-num" id="days">00</span>
-              <span class="time-unit">Dias</span>
-            </div>
-            <span class="time-sep">:</span>
-            <div class="time-block">
-              <span class="time-num" id="hours">00</span>
-              <span class="time-unit">Horas</span>
-            </div>
-            <span class="time-sep">:</span>
-            <div class="time-block">
-              <span class="time-num" id="minutes">00</span>
-              <span class="time-unit">Min</span>
-            </div>
-            <span class="time-sep">:</span>
-            <div class="time-block">
-              <span class="time-num" id="seconds">00</span>
-              <span class="time-unit">Seg</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bento Item 3: Localização -->
-        <div class="bento-card card-location">
-          <div class="bento-icon-wrap"><i class="fa-solid fa-location-dot"></i></div>
-          <div class="bento-content">
-            <span class="bento-label">LOCAL DO EVENTO</span>
-            <h3 class="bento-value">Colégio Objetivo</h3>
-            <p class="bento-sub">Camboinhas — Niterói / RJ</p>
-            <div class="bento-links">
-              <a href="https://maps.google.com/?q=Colegio+Objetivo+Camboinhas+Niteroi" target="_blank" rel="noopener" class="link-map">
-                <i class="fa-solid fa-map-pin"></i> Google Maps
-              </a>
-              <a href="https://waze.com/ul?q=Colegio+Objetivo+Camboinhas+Niteroi" target="_blank" rel="noopener" class="link-map">
-                <i class="fa-brands fa-waze"></i> Waze
-              </a>
+        <!-- Coluna Direita: Imagem de Capa do Evento com Badge -->
+        <div class="hero-media-side">
+          <div class="hero-image-frame">
+            <img src="img_summit.jpg" alt="Summit de Direito Tributário no Brasil" class="hero-featured-img">
+            <div class="hero-image-badge">
+              <i class="fa-solid fa-calendar-star"></i>
+              <div>
+                <strong>27 DE AGOSTO DE 2026</strong>
+                <span>19:00H • COLÉGIO OBJETIVO CAMBOINHAS</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Barra Única de Informações Rápidas e Regressiva (Faixa Elegante) -->
+      <div class="event-summary-ribbon">
+        <div class="ribbon-item">
+          <i class="fa-solid fa-calendar-day ribbon-icon"></i>
+          <div>
+            <span class="ribbon-label">DATA</span>
+            <strong>27/08/2026</strong>
+            <small>Quinta-feira</small>
+          </div>
+        </div>
+
+        <div class="ribbon-divider"></div>
+
+        <div class="ribbon-item">
+          <i class="fa-solid fa-clock ribbon-icon"></i>
+          <div>
+            <span class="ribbon-label">HORÁRIO</span>
+            <strong>19:00h</strong>
+            <small>Recepção & Abertura</small>
+          </div>
+        </div>
+
+        <div class="ribbon-divider"></div>
+
+        <div class="ribbon-item">
+          <i class="fa-solid fa-location-dot ribbon-icon"></i>
+          <div>
+            <span class="ribbon-label">LOCAL</span>
+            <strong>Colégio Objetivo</strong>
+            <small>Camboinhas — Niterói/RJ</small>
+          </div>
+        </div>
+
+        <div class="ribbon-divider"></div>
+
+        <!-- Regressiva Integrada na Faixa -->
+        <div class="ribbon-timer">
+          <span class="timer-label"><i class="fa-solid fa-hourglass-half"></i> FALTAM:</span>
+          <div class="mini-countdown" id="countdown">
+            <span id="days">00</span>d : <span id="hours">00</span>h : <span id="minutes">00</span>m : <span id="seconds">00</span>s
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Seção: Eixos Principais do Evento (Cards Bento Modernos) -->
-  <section class="section-topics">
+  <!-- Seção 1: Temas Estratégicos (Layout Editorial Fluido com Imagem Lateral) -->
+  <section class="section-topics-fluid">
     <div class="container">
       <div class="section-header text-center">
         <span class="section-badge">PROGRAMAÇÃO ESTRATÉGICA</span>
         <h2 class="section-title">Temas em Destaque</h2>
-        <p class="section-subtext">Conteúdo objetivo e aplicável focado em tomada de decisão e segurança jurídica.</p>
+        <p class="section-subtext">Visão prática, contábil e jurídica para proteger seu negócio e manter a competitividade.</p>
       </div>
 
-      <div class="topics-grid">
-        <!-- Topic 1 -->
-        <div class="topic-card">
-          <div class="topic-card-header">
-            <span class="topic-tag">EIXO 01</span>
-            <div class="topic-icon"><i class="fa-solid fa-chart-pie"></i></div>
-          </div>
-          <h3>Reforma Tributária na Prática</h3>
-          <p>O que sua empresa precisa implementar ainda em 2026 para readequar a carga tributária do consumo e evitar riscos fiscais.</p>
-          <div class="topic-speaker-row">
-            <div class="speaker-mini-avatar"><i class="fa-solid fa-user-tie"></i></div>
-            <span>Palestrante: <strong>Leonardo Cursino</strong></span>
+      <div class="topics-split-container">
+        <!-- Esquerda: Imagem Temática de Reunião Executiva/Holdings -->
+        <div class="topics-media">
+          <img src="img_wealth.jpg" alt="Planejamento Tributário e Patrimonial" class="topics-img">
+          <div class="topics-media-caption">
+            <i class="fa-solid fa-shield-halved"></i> Estratégia fiscal, governança e estruturação de holdings patrimoniais.
           </div>
         </div>
 
-        <!-- Topic 2 -->
-        <div class="topic-card highlight-card">
-          <div class="topic-card-header">
-            <span class="topic-tag tag-gold">EIXO 02</span>
-            <div class="topic-icon icon-gold"><i class="fa-solid fa-calculator"></i></div>
+        <!-- Direita: Lista Fluida de Temas sem Cards Isolados -->
+        <div class="topics-list-flow">
+          <!-- Tema 1 -->
+          <div class="topic-row-item">
+            <div class="topic-number-badge">01</div>
+            <div class="topic-text-content">
+              <h3>Reforma Tributária na Prática</h3>
+              <p>O que sua empresa precisa implementar ainda em 2026 para readequar custos fiscais no consumo e na renda, evitando riscos e preservando a margem de competitividade.</p>
+              <span class="topic-speaker-pill"><i class="fa-solid fa-user-tie"></i> Palestrante: <strong>Leonardo Cursino</strong> (CTSADV)</span>
+            </div>
           </div>
-          <h3>Desafios Contábeis & Gestão</h3>
-          <p>Como a contabilidade atuará na transição: escrituração fiscal eletrônica, adequação de ERP, compliance e governança.</p>
-          <div class="topic-speaker-row">
-            <div class="speaker-mini-avatar"><i class="fa-solid fa-user-tie"></i></div>
-            <span>Palestrante: <strong>Dr. José Carlos</strong></span>
-          </div>
-        </div>
 
-        <!-- Topic 3 -->
-        <div class="topic-card">
-          <div class="topic-card-header">
-            <span class="topic-tag">EIXO 03</span>
-            <div class="topic-icon"><i class="fa-solid fa-building-columns"></i></div>
+          <!-- Tema 2 -->
+          <div class="topic-row-item">
+            <div class="topic-number-badge">02</div>
+            <div class="topic-text-content">
+              <h3>Desafios Contábeis & Gestão das Empresas</h3>
+              <p>A contabilidade como protagonista da transição: escrituração fiscal eletrônica, adequação de sistemas ERP, compliance e rotinas de controle interno.</p>
+              <span class="topic-speaker-pill"><i class="fa-solid fa-user-tie"></i> Palestrante: <strong>Dr. José Carlos</strong> (JCA Contadores)</span>
+            </div>
           </div>
-          <h3>Planejamento Patrimonial & Holdings</h3>
-          <p>Proteção de ativos empresariais, estruturação de holdings familiares e estratégias de sucessão patrimonial com segurança jurídica.</p>
-          <div class="topic-speaker-row">
-            <div class="speaker-mini-avatar"><i class="fa-solid fa-user-tie"></i></div>
-            <span>Palestrante: <strong>Karine Monteiro</strong></span>
+
+          <!-- Tema 3 -->
+          <div class="topic-row-item">
+            <div class="topic-number-badge">03</div>
+            <div class="topic-text-content">
+              <h3>Planejamento Patrimonial & Holdings Familiares</h3>
+              <p>Proteção de ativos empresariais, estruturação de holdings familiares e planejamento sucessório com segurança jurídica e continuidade dos negócios.</p>
+              <span class="topic-speaker-pill"><i class="fa-solid fa-user-tie"></i> Palestrante: <strong>Karine Monteiro</strong> (CTSADV)</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Seção: Palestrantes Convidados -->
-  <section class="section-speakers">
+  <!-- Seção 2: Especialistas Convidados (Seção Escura Executiva para Contraste Visual) -->
+  <section class="section-speakers-dark">
     <div class="container">
       <div class="section-header text-center">
-        <span class="section-badge">CORPO DOCENTE & DEBATEDORES</span>
-        <h2 class="section-title">Especialistas Convidados</h2>
+        <span class="section-badge badge-gold">CORPO DOCENTE & DEBATEDORES</span>
+        <h2 class="section-title text-white">Especialistas Convidados</h2>
       </div>
 
-      <div class="speakers-grid">
+      <div class="speakers-row-grid">
         <!-- Speaker 1 -->
-        <div class="speaker-card">
-          <div class="speaker-badge-icon"><i class="fa-solid fa-scale-balanced"></i></div>
-          <div class="speaker-details">
-            <h3>Leonardo Cursino</h3>
-            <span class="speaker-title">Sócio de Direito Tributário</span>
-            <p class="speaker-office">Cursino & Teodoro da Silva Advogados</p>
-          </div>
+        <div class="speaker-profile-box">
+          <div class="speaker-avatar-circle"><i class="fa-solid fa-scale-balanced"></i></div>
+          <h3>Leonardo Cursino</h3>
+          <span class="speaker-role-gold">Sócio de Direito Tributário</span>
+          <p class="speaker-company">Cursino & Teodoro da Silva Advogados</p>
         </div>
 
         <!-- Speaker 2 -->
-        <div class="speaker-card">
-          <div class="speaker-badge-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
-          <div class="speaker-details">
-            <h3>Dr. José Carlos</h3>
-            <span class="speaker-title">Sócio Fundador</span>
-            <p class="speaker-office">JCA Contadores</p>
-          </div>
+        <div class="speaker-profile-box">
+          <div class="speaker-avatar-circle"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+          <h3>Dr. José Carlos</h3>
+          <span class="speaker-role-gold">Sócio Fundador</span>
+          <p class="speaker-company">JCA Contadores</p>
         </div>
 
         <!-- Speaker 3 -->
-        <div class="speaker-card">
-          <div class="speaker-badge-icon"><i class="fa-solid fa-shield-halved"></i></div>
-          <div class="speaker-details">
-            <h3>Karine Monteiro</h3>
-            <span class="speaker-title">Sócia de Direito Empresarial</span>
-            <p class="speaker-office">Cursino & Teodoro da Silva Advogados</p>
-          </div>
+        <div class="speaker-profile-box">
+          <div class="speaker-avatar-circle"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Karine Monteiro</h3>
+          <span class="speaker-role-gold">Sócia de Direito Empresarial</span>
+          <p class="speaker-company">Cursino & Teodoro da Silva Advogados</p>
         </div>
 
         <!-- Speaker 4 -->
-        <div class="speaker-card">
-          <div class="speaker-badge-icon"><i class="fa-solid fa-gavel"></i></div>
-          <div class="speaker-details">
-            <h3>William Teodoro da Silva Filho</h3>
-            <span class="speaker-title">Moderador & Abertura</span>
-            <p class="speaker-office">Cursino & Teodoro da Silva Advogados</p>
-          </div>
+        <div class="speaker-profile-box">
+          <div class="speaker-avatar-circle"><i class="fa-solid fa-gavel"></i></div>
+          <h3>William Teodoro da Silva Filho</h3>
+          <span class="speaker-role-gold">Moderador & Abertura</span>
+          <p class="speaker-company">Cursino & Teodoro da Silva Advogados</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Seção: Linha do Tempo / Cronograma -->
-  <section class="section-agenda">
+  <!-- Seção 3: Cronograma do Evento (Timeline Fluida) -->
+  <section class="section-agenda-fluid">
     <div class="container">
-      <div class="agenda-card">
-        <div class="agenda-top">
+      <div class="agenda-fluid-wrap">
+        <div class="agenda-header-inline">
           <h2><i class="fa-solid fa-list-check"></i> Cronograma do Evento</h2>
-          <span class="time-span-badge">19:00h às 21:00h • Inclui Coffee Break</span>
+          <span class="time-pill">19:00h às 21:00h • Inclui Coffee Break</span>
         </div>
 
-        <div class="timeline-container">
-          <div class="timeline-row">
-            <div class="t-time">19:00h</div>
-            <div class="t-node"></div>
-            <div class="t-info">
-              <h4>Abertura Institucional & Apresentação</h4>
+        <div class="timeline-fluid">
+          <div class="t-fluid-row">
+            <span class="t-fluid-time">19:00h</span>
+            <div class="t-fluid-content">
+              <h4>Abertura Institucional & Recepção</h4>
               <p>Boas-vindas institucionais pelo Colégio Objetivo e CTSADV com moderação de William Teodoro da Silva Filho.</p>
             </div>
           </div>
 
-          <div class="timeline-row">
-            <div class="t-time">19:05h</div>
-            <div class="t-node"></div>
-            <div class="t-info">
+          <div class="t-fluid-row">
+            <span class="t-fluid-time">19:05h</span>
+            <div class="t-fluid-content">
               <h4>Painel 1: Reforma Tributária na Prática</h4>
-              <p>Com Leonardo Cursino (CTSADV). Transição 2026, competitividade e riscos fiscais.</p>
+              <p>Com Leonardo Cursino (CTSADV). Cenário 2026, competitividade e prevenção de riscos fiscais.</p>
             </div>
           </div>
 
-          <div class="timeline-row row-break">
-            <div class="t-time">19:45h</div>
-            <div class="t-node node-gold"></div>
-            <div class="t-info">
+          <div class="t-fluid-row row-coffee">
+            <span class="t-fluid-time">19:45h</span>
+            <div class="t-fluid-content">
               <h4><i class="fa-solid fa-mug-hot"></i> Coffee Break & Networking Executivo</h4>
-              <p>Espaço reservado para relacionamento e troca de experiências entre convidados.</p>
+              <p>Espaço reservado para relacionamento e troca de experiências entre convidados e palestrantes.</p>
             </div>
           </div>
 
-          <div class="timeline-row">
-            <div class="t-time">20:00h</div>
-            <div class="t-node"></div>
-            <div class="t-info">
-              <h4>Painel 2: Desafios Contábeis e Gestão</h4>
-              <p>Com Dr. José Carlos (JCA Contadores). Escrituração, ERP e compliance fiscal.</p>
+          <div class="t-fluid-row">
+            <span class="t-fluid-time">20:00h</span>
+            <div class="t-fluid-content">
+              <h4>Painel 2: Desafios Contábeis e Gestão Empresarial</h4>
+              <p>Com Dr. José Carlos (JCA Contadores). Escrituração fiscal eletrônica, ERP e compliance.</p>
             </div>
           </div>
 
-          <div class="timeline-row">
-            <div class="t-time">20:25h</div>
-            <div class="t-node"></div>
-            <div class="t-info">
-              <h4>Painel 3: Planejamento Patrimonial e Holdings</h4>
-              <p>Com Karine Monteiro (CTSADV). Proteção de bens e estrutura sucessória.</p>
+          <div class="t-fluid-row">
+            <span class="t-fluid-time">20:25h</span>
+            <div class="t-fluid-content">
+              <h4>Painel 3: Planejamento Patrimonial e Holdings Familiares</h4>
+              <p>Com Karine Monteiro (CTSADV). Proteção de ativos e segurança na sucessão familiar.</p>
             </div>
           </div>
 
-          <div class="timeline-row">
-            <div class="t-time">20:50h</div>
-            <div class="t-node"></div>
-            <div class="t-info">
-              <h4>Perguntas, Debates & Encerramento</h4>
-              <p>Esclarecimentos finais com os debatedores.</p>
+          <div class="t-fluid-row">
+            <span class="t-fluid-time">20:50h</span>
+            <div class="t-fluid-content">
+              <h4>Debates, Perguntas & Encerramento</h4>
+              <p>Sessão de perguntas do público e considerações finais.</p>
             </div>
           </div>
         </div>
@@ -309,17 +295,17 @@
     </div>
   </section>
 
-  <!-- Seção: Localização -->
-  <section class="section-location">
+  <!-- Seção 4: Localização & Mapa -->
+  <section class="section-location-fluid">
     <div class="container">
-      <div class="location-wrapper">
-        <div class="location-details">
+      <div class="location-split-card">
+        <div class="loc-text-col">
           <span class="section-badge">ONDE SERÁ O EVENTO</span>
           <h2>Colégio Objetivo Camboinhas</h2>
-          <p class="loc-address"><i class="fa-solid fa-location-dot"></i> Av. Prof. Florestan Fernandes, Camboinhas — Niterói / RJ</p>
-          <p class="loc-desc">Ambiente preparado e climatizado com infraestrutura completa e facilidade de estacionamento.</p>
+          <p class="loc-address-text"><i class="fa-solid fa-location-dot"></i> Av. Prof. Florestan Fernandes, Camboinhas — Niterói / RJ</p>
+          <p class="loc-detail-text">Ambiente preparado e climatizado com infraestrutura completa para recepção dos convidados e facilidade de estacionamento.</p>
 
-          <div class="loc-actions">
+          <div class="loc-buttons">
             <a href="https://maps.google.com/?q=Colegio+Objetivo+Camboinhas+Niteroi" target="_blank" rel="noopener" class="btn btn-secondary">
               <i class="fa-solid fa-map-location-dot"></i> Abrir no Google Maps
             </a>
@@ -329,9 +315,9 @@
           </div>
         </div>
 
-        <div class="location-map">
+        <div class="loc-map-col">
           <iframe 
-            title="Mapa do Evento"
+            title="Mapa do Local"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.523366889414!2d-43.06450000000001!3d-22.930900000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99849206d2fb5f%3A0x8829f0322b7d4133!2sCamboinhas%2C%20Niter%C3%B3i%20-%20RJ!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
             width="100%" 
             height="100%" 
@@ -344,13 +330,13 @@
     </div>
   </section>
 
-  <!-- Final CTA Card -->
-  <section class="section-cta">
+  <!-- Final CTA Callout -->
+  <section class="section-final-cta">
     <div class="container text-center">
-      <div class="cta-box">
+      <div class="cta-banner">
         <h2>Garanta Sua Vaga no Evento</h2>
-        <p>Vagas limitadas para preservar a qualidade da interação e do networking.</p>
-        <div class="cta-actions">
+        <p>Vagas limitadas para preservar a qualidade do networking e da interação com os especialistas.</p>
+        <div class="cta-banner-buttons">
           <button class="btn btn-primary btn-gold btn-large glow-effect" onclick="openRSVPModal()">
             <i class="fa-brands fa-whatsapp"></i> Confirmar Presença via WhatsApp
           </button>
@@ -362,7 +348,7 @@
     </div>
   </section>
 
-  <!-- Sticky Bottom RSVP Bar for Mobile -->
+  <!-- Sticky RSVP Bar para Dispositivos Móveis -->
   <div class="sticky-rsvp-bar" id="stickyRsvp">
     <div class="sticky-text">
       <strong>O Novo Jogo Tributário</strong>

@@ -358,40 +358,31 @@
     </div>
   </footer>
 
-  <!-- Modal RSVP -->
+  <!-- Modal RSVP / Formulário de Inscrição Google Forms Embedado -->
   <div class="modal-overlay" id="rsvpModal">
-    <div class="modal-card">
+    <div class="modal-card modal-card-large">
       <button class="modal-close" onclick="closeRSVPModal()">&times;</button>
       <div class="modal-head">
-        <div class="whatsapp-badge-icon"><i class="fa-brands fa-whatsapp"></i></div>
-        <h3>Confirmação de Presença</h3>
-        <p>Preencha os dados abaixo para confirmar sua vaga via WhatsApp.</p>
+        <div class="form-badge-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+        <h3>Inscrição no Evento</h3>
+        <p>Preencha o formulário oficial abaixo para confirmar sua vaga.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe8WeEVIgrv3tLEG9GYCAGAPvEUmQ1q1h2diBagv7sde6vAzA/viewform" target="_blank" rel="noopener" class="direct-form-link">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir formulário em nova aba
+        </a>
       </div>
 
-      <form id="rsvpForm" onsubmit="handleRSVPSubmit(event)">
-        <div class="form-field">
-          <label for="participantName">Nome Completo *</label>
-          <input type="text" id="participantName" required placeholder="Ex: Roberto Silva">
-        </div>
-
-        <div class="form-field">
-          <label for="companyName">Empresa / Cargo *</label>
-          <input type="text" id="companyName" required placeholder="Ex: Grupo Silva / Diretor Executivo">
-        </div>
-
-        <div class="form-field">
-          <label for="accompanyCount">Acompanhantes</label>
-          <select id="accompanyCount">
-            <option value="Apenas eu">Apenas eu</option>
-            <option value="1 acompanhante">+ 1 Acompanhante</option>
-            <option value="2 acompanhantes">+ 2 Acompanhantes</option>
-          </select>
-        </div>
-
-        <button type="submit" class="btn btn-primary btn-gold btn-block btn-large">
-          <i class="fa-brands fa-whatsapp"></i> Confirmar Presença no WhatsApp
-        </button>
-      </form>
+      <div class="google-form-iframe-wrapper">
+        <iframe 
+          title="Formulário de Inscrição"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSe8WeEVIgrv3tLEG9GYCAGAPvEUmQ1q1h2diBagv7sde6vAzA/viewform?embedded=true" 
+          width="100%" 
+          height="620" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0">
+          Carregando formulário de inscrição...
+        </iframe>
+      </div>
     </div>
   </div>
 

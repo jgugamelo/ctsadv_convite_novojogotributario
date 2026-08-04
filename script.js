@@ -106,7 +106,7 @@ function handleRSVPSubmit(event) {
 function addToCalendar() {
   const title = encodeURIComponent("O Novo Jogo Tributário no Brasil: Como preparar sua empresa para 2026");
   const details = encodeURIComponent("Evento sobre Reforma Tributária do Consumo, Reforma da Renda, Desafios Contábeis e Holdings Familiares. Realização: CTSADV & Objetivo Camboinhas.");
-  const location = encodeURIComponent("Colégio Objetivo Camboinhas - Av. Prof. Florestan Fernandes, Camboinhas, Niterói - RJ");
+  const location = encodeURIComponent("Colégio Objetivo Camboinhas - Rua Prof. Álvaro Caetano, 908, Camboinhas, Niterói - RJ");
   
   const dates = "20260827T220000Z/20260828T000000Z";
   const googleCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;

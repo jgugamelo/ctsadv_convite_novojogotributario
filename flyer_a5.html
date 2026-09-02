@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Flyer A5 — O Novo Jogo Tributário no Brasil</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* CSS Paged Media para A5 Exato (148mm x 210mm) com Margem de Segurança 3mm */
+    @page {
+      size: 148mm 210mm;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 148mm;
+      height: 210mm;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #FAF9F5;
+      color: #334155;
+      padding: 3mm; /* Margem de Segurança de 3mm solicitada */
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Container Interno Seguro */
+    .flyer-inner {
+      width: 100%;
+      height: 100%;
+      background: #FFFFFF;
+      border: 1.5px solid #B88A28;
+      border-radius: 12px;
+      padding: 6mm 6mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Faixa de Decoração Superior */
+    .top-gold-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #E6C057 0%, #B88A28 50%, #8C6514 100%);
+    }
+
+    /* Cabeçalho de Logos */
+    .flyer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(184, 138, 40, 0.2);
+      padding-bottom: 3.5mm;
+      margin-bottom: 3mm;
+    }
+
+    .badge-event {
+      font-size: 6.5pt;
+      font-weight: 800;
+      color: #0A1526;
+      background: #FAF6EB;
+      border: 1px solid #B88A28;
+      padding: 3px 8px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .logos-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-img-ctsadv {
+      height: 26px;
+      width: auto;
+    }
+
+    .logo-img-objetivo {
+      height: 24px;
+      width: auto;
+    }
+
+    .logo-sep {
+      width: 1px;
+      height: 22px;
+      background: #B88A28;
+    }
+
+    /* Hero Headline */
+    .flyer-hero {
+      text-align: center;
+      margin-bottom: 3.5mm;
+    }
+
+    .hero-main-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 16pt;
+      font-weight: 800;
+      color: #0A1526;
+      line-height: 1.15;
+      margin-bottom: 1.5mm;
+    }
+
+    .gold-italic {
+      color: #B88A28;
+      font-style: italic;
+    }
+
+    .hero-subtitle-box {
+      font-size: 7.5pt;
+      font-weight: 800;
+      color: #0A1526;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 1.5mm;
+    }
+
+    .hero-desc {
+      font-size: 6.8pt;
+      color: #475569;
+      line-height: 1.3;
+      max-width: 95%;
+      margin: 0 auto;
+    }
+
+    /* Faixa de Informações (Data, Hora, Local) */
+    .info-ribbon {
+      background: #0A1526;
+      color: #FFFFFF;
+      border-radius: 8px;
+      padding: 3mm 4mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      border: 1px solid #B88A28;
+      margin-bottom: 3.5mm;
+    }
+
+    .info-box {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .info-box i {
+      color: #DFB443;
+      font-size: 9pt;
+    }
+
+    .info-txt {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info-txt span {
+      font-size: 5.5pt;
+      font-weight: 800;
+      color: #DFB443;
+      letter-spacing: 0.5px;
+    }
+
+    .info-txt strong {
+      font-size: 7.5pt;
+      color: #FFFFFF;
+      line-height: 1.1;
+    }
+
+    .info-txt small {
+      font-size: 6pt;
+      color: #CBD5E1;
+    }
+
+    .info-divider-vertical {
+      width: 1px;
+      height: 20px;
+      background: rgba(223, 180, 67, 0.3);
+    }
+
+    /* Programação Estratégica */
+    .topics-section {
+      margin-bottom: 3mm;
+    }
+
+    .section-label-heading {
+      font-size: 7pt;
+      font-weight: 800;
+      color: #B88A28;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 2mm;
+    }
+
+    .topic-item {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 2.5mm;
+      padding-bottom: 2mm;
+      border-bottom: 1px dashed rgba(184, 138, 40, 0.25);
+    }
+
+    .topic-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .topic-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 11pt;
+      font-weight: 800;
+      color: #B88A28;
+      background: #FAF6EB;
+      border: 1px solid #B88A28;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .topic-content h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #0A1526;
+      line-height: 1.15;
+      margin-bottom: 0.8mm;
+    }
+
+    .topic-content p {
+      font-size: 6.3pt;
+      color: #334155;
+      line-height: 1.25;
+      margin-bottom: 1mm;
+    }
+
+    .speaker-tag {
+      display: inline-block;
+      font-size: 6pt;
+      font-weight: 700;
+      color: #0A1526;
+      background: #FAF6EB;
+      padding: 1.5px 6px;
+      border-radius: 4px;
+      border-left: 2px solid #B88A28;
+    }
+
+    /* Seção de Moderação */
+    .moderator-bar {
+      background: #F4F1EA;
+      border-radius: 6px;
+      padding: 2mm 3mm;
+      font-size: 6.2pt;
+      color: #0A1526;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 3mm;
+    }
+
+    .moderator-bar i {
+      color: #B88A28;
+      font-size: 8pt;
+    }
+
+    /* Footer & QR Code */
+    .flyer-footer {
+      border-top: 1px solid rgba(184, 138, 40, 0.3);
+      padding-top: 2.5mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #FFFFFF;
+    }
+
+    .cta-text-box {
+      flex: 1;
+      padding-right: 8px;
+    }
+
+    .cta-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 9.5pt;
+      font-weight: 800;
+      color: #0A1526;
+      margin-bottom: 1mm;
+    }
+
+    .cta-sub {
+      font-size: 6pt;
+      color: #475569;
+      margin-bottom: 1.5mm;
+    }
+
+    .motto-txt {
+      font-size: 5.2pt;
+      font-weight: 800;
+      color: #B88A28;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    .qr-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #FAF6EB;
+      padding: 2mm;
+      border-radius: 8px;
+      border: 1px solid #B88A28;
+      flex-shrink: 0;
+    }
+
+    .qr-box img {
+      width: 32mm;
+      height: 32mm;
+    }
+
+    .qr-box span {
+      font-size: 5pt;
+      font-weight: 800;
+      color: #0A1526;
+      margin-top: 1mm;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="flyer-inner">
+    <div class="top-gold-bar"></div>
+
+    <!-- Header Institucional -->
+    <div class="flyer-header">
+      <span class="badge-event"><i class="fa-solid fa-crown"></i> EVENTO EXCLUSIVO</span>
+      <div class="logos-container">
+        <img src="Nova Logo CTSADV.png" alt="CTSADV" class="logo-img-ctsadv">
+        <div class="logo-sep"></div>
+        <img src="objetivo.png" alt="Objetivo Camboinhas" class="logo-img-objetivo">
+      </div>
+    </div>
+
+    <!-- Hero Title -->
+    <div class="flyer-hero">
+      <h1 class="hero-main-title">
+        O NOVO JOGO TRIBUTÁRIO<br>
+        <span class="gold-italic">NO BRASIL</span>
+      </h1>
+      <div class="hero-subtitle-box">
+        COMO PREPARAR SUA EMPRESA PARA A NOVA REALIDADE FISCAL
+      </div>
+      <p class="hero-desc">
+        Reforma Tributária do Consumo, Reforma da Renda e os impactos práticos para empresários, gestores e famílias empresárias em 2026.
+      </p>
+    </div>
+
+    <!-- Informações Rápidas (Faixa Azul Marinho) -->
+    <div class="info-ribbon">
+      <div class="info-box">
+        <i class="fa-solid fa-calendar-day"></i>
+        <div class="info-txt">
+          <span>DATA</span>
+          <strong>15/09/2026</strong>
+          <small>Terça-feira</small>
+        </div>
+      </div>
+
+      <div class="info-divider-vertical"></div>
+
+      <div class="info-box">
+        <i class="fa-solid fa-clock"></i>
+        <div class="info-txt">
+          <span>HORÁRIO</span>
+          <strong>19:00h</strong>
+          <small>Recepção & Abertura</small>
+        </div>
+      </div>
+
+      <div class="info-divider-vertical"></div>
+
+      <div class="info-box">
+        <i class="fa-solid fa-location-dot"></i>
+        <div class="info-txt">
+          <span>LOCAL</span>
+          <strong>Colégio Objetivo</strong>
+          <small>Rua Prof. Álvaro Caetano, 908 - Camboinhas/Niterói</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Temas Estratégicos -->
+    <div class="topics-section">
+      <div class="section-label-heading">PROGRAMAÇÃO ESTRATÉGICA</div>
+
+      <!-- Tema 1 -->
+      <div class="topic-item">
+        <div class="topic-num">1</div>
+        <div class="topic-content">
+          <h4>REFORMA TRIBUTÁRIA NA PRÁTICA</h4>
+          <p>O que sua empresa precisa fazer ainda em 2026 para evitar riscos fiscais e preservar competitividade.</p>
+          <span class="speaker-tag"><i class="fa-solid fa-user-tie"></i> Palestrante: <strong>Leonardo Cursino</strong> (Sócia de Direito Tributário - CTSADV)</span>
+        </div>
+      </div>
+
+      <!-- Tema 2 (Com João Carlos Romualdo e Renata Targino) -->
+      <div class="topic-item">
+        <div class="topic-num">2</div>
+        <div class="topic-content">
+          <h4>OS DESAFIOS CONTÁBEIS DA TRANSIÇÃO E OS IMPACTOS NA GESTÃO DAS EMPRESAS</h4>
+          <p>Como a contabilidade será protagonista na adaptação das empresas: escrituração fiscal eletrônica, ERP, compliance e controles internos.</p>
+          <span class="speaker-tag"><i class="fa-solid fa-user-tie"></i> Palestrantes: <strong>João Carlos Romualdo</strong> e <strong>Renata Targino</strong> (JCA Contadores)</span>
+        </div>
+      </div>
+
+      <!-- Tema 3 -->
+      <div class="topic-item">
+        <div class="topic-num">3</div>
+        <div class="topic-content">
+          <h4>PLANEJAMENTO PATRIMONIAL, SUCESSÓRIO E HOLDINGS FAMILIARES</h4>
+          <p>Como proteger o patrimônio empresarial, estruturar holdings familiares e planejar a sucessão com segurança jurídica.</p>
+          <span class="speaker-tag"><i class="fa-solid fa-user-tie"></i> Palestrante: <strong>Karine Monteiro</strong> (Sócia de Direito Empresarial - CTSADV)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Moderação -->
+    <div class="moderator-bar">
+      <i class="fa-solid fa-gavel"></i>
+      <div>
+        <strong>Abertura Institucional & Moderação:</strong> William Teodoro da Silva Filho (CTSADV)
+      </div>
+    </div>
+
+    <!-- Footer & QR Code para Inscrição -->
+    <div class="flyer-footer">
+      <div class="cta-text-box">
+        <div class="cta-title">CONFIRME SUA PRESENÇA</div>
+        <div class="cta-sub">Vagas limitadas para preservar a qualidade do networking.</div>
+        <div class="motto-txt">INFORMAÇÃO, PLANEJAMENTO E SEGURANÇA JURÍDICA PARA DECISÕES QUE GERAM RESULTADOS.</div>
+      </div>
+      <div class="qr-box">
+        <img src="qr_code.svg" alt="QR Code Inscrição">
+        <span>ESCANEIE PARA INSCRIÇÃO</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

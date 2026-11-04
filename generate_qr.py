@@ -49,4 +49,4 @@ def create_qr_svg(data, filename):
         f.write('\n'.join(svg))
     print(f"Generated {filename}")
 
-create_qr_svg("https://docs.google.com/forms/d/e/1FAIpQLSe8WeEVIgrv3tLEG9GYCAGAPvEUmQ1q1h2diBagv7sde6vAzA/viewform", "qr_code.svg")
+create_qr_svg("https://forms.gle/5PyhPcKzJ42cFgur7", "qr_code.svg")

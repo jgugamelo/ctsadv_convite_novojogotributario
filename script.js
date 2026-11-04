@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* --- 1. Regressiva (Countdown Timer) --- */
 function initCountdown() {
-  const eventDate = new Date('2026-09-15T19:00:00-03:00').getTime();
+  const eventDate = new Date('2026-11-25T19:00:00-03:00').getTime();
 
   const daysEl = document.getElementById('days');
   const hoursEl = document.getElementById('hours');
@@ -89,7 +89,7 @@ function handleRSVPSubmit(event) {
 
   const textMessage = 
     `*CONFIRMAÇÃO DE PRESENÇA — O NOVO JOGO TRIBUTÁRIO NO BRASIL*\n\n` +
-    `Olá! Gostaria de confirmar minha presença no evento do dia 15/09/2026.\n\n` +
+    `Olá! Gostaria de confirmar minha presença na 2ª edição do evento do dia 25/11/2026.\n\n` +
     `👤 *Nome:* ${name}\n` +
     `🏢 *Empresa / Cargo:* ${company}\n` +
     `👥 *Acompanhantes:* ${accompany}\n\n` +
@@ -104,11 +104,11 @@ function handleRSVPSubmit(event) {
 
 /* --- 4. Adicionar ao Google Calendar --- */
 function addToCalendar() {
-  const title = encodeURIComponent("O Novo Jogo Tributário no Brasil: Como preparar sua empresa para 2026");
-  const details = encodeURIComponent("Evento sobre Reforma Tributária do Consumo, Reforma da Renda, Desafios Contábeis e Holdings Familiares. Realização: CTSADV & Objetivo Camboinhas.");
+  const title = encodeURIComponent("O Novo Jogo Tributário no Brasil: Como preparar sua empresa para 2026 - 2ª Edição");
+  const details = encodeURIComponent("Evento sobre Reforma Tributária do Consumo, Reforma da Renda, Desafios Contábeis e Holdings Familiares (2ª Edição). Realização: CTSADV & Objetivo Camboinhas.");
   const location = encodeURIComponent("Colégio Objetivo Camboinhas - Rua Prof. Álvaro Caetano, 908, Camboinhas, Niterói - RJ");
   
-  const dates = "20260915T220000Z/20260916T000000Z";
+  const dates = "20261125T220000Z/20261126T000000Z";
   const googleCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
 
   window.open(googleCalUrl, '_blank');
@@ -117,8 +117,8 @@ function addToCalendar() {
 /* --- 5. Compartilhar Convite --- */
 function shareInvite() {
   const shareData = {
-    title: 'O Novo Jogo Tributário no Brasil',
-    text: 'Convite Especial: Como preparar sua empresa para a nova realidade fiscal em 2026. 15/09 às 19h no Colégio Objetivo Camboinhas.',
+    title: 'O Novo Jogo Tributário no Brasil — 2ª Edição',
+    text: 'Convite Especial: Como preparar sua empresa para a nova realidade fiscal em 2026 (2ª Edição). 25/11 às 19h no Colégio Objetivo Camboinhas.',
     url: window.location.href
   };
 

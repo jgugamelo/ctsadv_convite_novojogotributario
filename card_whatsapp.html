@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Card WhatsApp — O Novo Jogo Tributário no Brasil (2ª Edição)</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 1080px;
+      height: 1350px;
+      background-color: #FAF9F5;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #1E293B;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 45px 50px 35px 50px;
+    }
+
+    /* Borda Nobre e Moldura Dourada */
+    .outer-border {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      border: 2px solid #C59B3B;
+      border-radius: 20px;
+      pointer-events: none;
+      z-index: 20;
+    }
+
+    /* Curva de Topo */
+    .top-bg-curve {
+      position: absolute;
+      top: -240px;
+      left: -100px;
+      width: 1280px;
+      height: 380px;
+      background: radial-gradient(circle at 50% 120%, #162846 0%, #0A1526 100%);
+      border-bottom: 5px solid #C59B3B;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    /* Selo de Topo */
+    .top-badge-row {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: -5px;
+      margin-bottom: 20px;
+    }
+
+    .badge-pill {
+      background: linear-gradient(135deg, #F3D37D 0%, #C59B3B 50%, #946F19 100%);
+      color: #0A1526;
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      padding: 8px 22px;
+      border-radius: 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      border: 1.5px solid #FFF3D1;
+      text-transform: uppercase;
+    }
+
+    .top-logos {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: #FFFFFF;
+      padding: 6px 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(197, 155, 59, 0.4);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    .top-logo-cts {
+      height: 38px;
+      width: auto;
+    }
+
+    .top-logo-sep {
+      width: 1px;
+      height: 32px;
+      background: #C59B3B;
+    }
+
+    .top-logo-obj {
+      height: 32px;
+      width: auto;
+    }
+
+    /* Bloco Hero */
+    .hero-wrap {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+
+    .hero-text {
+      flex: 1;
+      max-width: 610px;
+    }
+
+    .h-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 44px;
+      font-weight: 900;
+      color: #0A1526;
+      line-height: 1.05;
+      margin-bottom: 10px;
+    }
+
+    .h-title .gold-accent {
+      color: #B88A28;
+    }
+
+    .h-divider {
+      width: 280px;
+      height: 2.5px;
+      background: linear-gradient(90deg, #B88A28 0%, #ECC86A 70%, transparent 100%);
+      margin-bottom: 10px;
+    }
+
+    .h-sub {
+      font-size: 17px;
+      font-weight: 900;
+      color: #0A1526;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+
+    .h-desc {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: #475569;
+      line-height: 1.3;
+    }
+
+    .hero-img-box {
+      width: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-img-box img {
+      width: 300px;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 20px rgba(10, 21, 38, 0.15));
+    }
+
+    /* Temas em Destaque */
+    .themes-container {
+      position: relative;
+      z-index: 10;
+      background: #FFFFFF;
+      border: 1.5px solid rgba(184, 138, 40, 0.35);
+      border-radius: 14px;
+      padding: 16px 22px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 15px rgba(184, 138, 40, 0.08);
+    }
+
+    .themes-header-label {
+      font-size: 12px;
+      font-weight: 800;
+      color: #B88A28;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .theme-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px dashed rgba(184, 138, 40, 0.25);
+    }
+
+    .theme-card:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .theme-badge-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #0A1526;
+      color: #F3D37D;
+      border: 1.5px solid #C59B3B;
+      font-size: 13px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .theme-details {
+      flex: 1;
+    }
+
+    .theme-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: #0A1526;
+      line-height: 1.15;
+      margin-bottom: 2px;
+      text-transform: uppercase;
+    }
+
+    .theme-speaker-pill {
+      font-size: 13px;
+      color: #334155;
+    }
+
+    .theme-speaker-pill strong {
+      color: #0A1526;
+      font-weight: 800;
+    }
+
+    .theme-speaker-pill .role {
+      color: #64748B;
+      font-size: 12px;
+    }
+
+    /* Faixa de Moderação */
+    .moderation-strip {
+      position: relative;
+      z-index: 10;
+      background: #F4EEDC;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 13px;
+      color: #0A1526;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-left: 4px solid #B88A28;
+      margin-bottom: 16px;
+    }
+
+    .moderation-strip i {
+      color: #B88A28;
+      font-size: 16px;
+    }
+
+    /* Faixa Principal de Local, Data e Inscrição */
+    .event-info-box {
+      position: relative;
+      z-index: 10;
+      background: #0A1526;
+      color: #FFFFFF;
+      border-radius: 14px;
+      border: 2px solid #C59B3B;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 8px 25px rgba(10, 21, 38, 0.25);
+    }
+
+    .info-left-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .info-icon-sq {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: rgba(197, 155, 59, 0.2);
+      border: 1px solid #C59B3B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #F3D37D;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .info-texts .i-label {
+      font-size: 11px;
+      font-weight: 800;
+      color: #F3D37D;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      display: block;
+    }
+
+    .info-texts .i-val {
+      font-size: 17px;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.1;
+    }
+
+    .info-texts .i-sub {
+      font-size: 12.5px;
+      color: #CBD5E1;
+      display: block;
+    }
+
+    .qr-register-col {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #FFFFFF;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1.5px solid #C59B3B;
+    }
+
+    .qr-register-col img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .qr-register-col .qr-txt {
+      font-size: 11.5px;
+      font-weight: 900;
+      color: #0A1526;
+      line-height: 1.25;
+      text-transform: uppercase;
+    }
+
+    /* Rodapé Final */
+    .card-footer {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding-top: 8px;
+    }
+
+    .card-footer p {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #B88A28;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Borda de acabamento dourado -->
+  <div class="outer-border"></div>
+
+  <!-- Curva Superior -->
+  <div class="top-bg-curve"></div>
+
+  <!-- Linha Superior: Selo + Logos -->
+  <div class="top-badge-row">
+    <div class="badge-pill">
+      <i class="fa-solid fa-crown"></i> 2ª EDIÇÃO • CONVITE EXCLUSIVO
+    </div>
+
+    <div class="top-logos">
+      <img src="Nova Logo CTSADV.png" alt="CTSADV" class="top-logo-cts">
+      <div class="top-logo-sep"></div>
+      <img src="objetivo.png" alt="Objetivo Camboinhas" class="top-logo-obj">
+    </div>
+  </div>
+
+  <!-- Hero Header -->
+  <div class="hero-wrap">
+    <div class="hero-text">
+      <h1 class="h-title">
+        O NOVO JOGO<br>
+        TRIBUTÁRIO <span class="gold-accent">NO BRASIL:</span>
+      </h1>
+      <div class="h-divider"></div>
+
+      <div class="h-sub">
+        COMO PREPARAR SUA EMPRESA PARA A NOVA REALIDADE FISCAL
+      </div>
+      <p class="h-desc">
+        Reforma Tributária do Consumo, Reforma da Renda e os impactos práticos decisivos para a competitividade dos negócios em 2026.
+      </p>
+    </div>
+
+    <div class="hero-img-box">
+      <img src="imagem.png" alt="O Novo Jogo Tributário">
+    </div>
+  </div>
+
+  <!-- Temas em Destaque -->
+  <div class="themes-container">
+    <div class="themes-header-label">PROGRAMAÇÃO & ESPECIALISTAS CONVIDADOS</div>
+
+    <!-- Tema 1 -->
+    <div class="theme-card">
+      <div class="theme-badge-num">1</div>
+      <div class="theme-details">
+        <div class="theme-name">Reforma Tributária na Prática</div>
+        <div class="theme-speaker-pill">
+          Palestrante: <strong>Leonardo Cursino</strong> <span class="role">(Sócio de Direito Tributário - CTSADV)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tema 2 -->
+    <div class="theme-card">
+      <div class="theme-badge-num">2</div>
+      <div class="theme-details">
+        <div class="theme-name">Os Desafios Contábeis da Transição e Gestão das Empresas</div>
+        <div class="theme-speaker-pill">
+          Palestrantes: <strong>João Carlos Romualdo</strong> e <strong>Renata Targino</strong> <span class="role">(Sócios da JCA Contadores)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tema 3 -->
+    <div class="theme-card">
+      <div class="theme-badge-num">3</div>
+      <div class="theme-details">
+        <div class="theme-name">Planejamento Patrimonial, Sucessório e Holdings Familiares</div>
+        <div class="theme-speaker-pill">
+          Palestrante: <strong>Karine Monteiro</strong> <span class="role">(Sócia de Direito Empresarial - CTSADV)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Moderação -->
+  <div class="moderation-strip">
+    <i class="fa-solid fa-gavel"></i>
+    <div>
+      <strong>Abertura Institucional & Moderação:</strong> William Teodoro da Silva Filho (CTSADV)
+    </div>
+  </div>
+
+  <!-- Caixa de Informações do Evento -->
+  <div class="event-info-box">
+    <div class="info-left-group">
+      <!-- Data -->
+      <div class="info-item">
+        <div class="info-icon-sq"><i class="fa-solid fa-calendar-day"></i></div>
+        <div class="info-texts">
+          <span class="i-label">DATA & HORÁRIO</span>
+          <span class="i-val">25/11/2026 (Quarta-feira) • 19:00h</span>
+          <span class="i-sub">Inclui Coffee Break & Networking</span>
+        </div>
+      </div>
+
+      <!-- Local -->
+      <div class="info-item">
+        <div class="info-icon-sq"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="info-texts">
+          <span class="i-label">LOCALIZAÇÃO</span>
+          <span class="i-val">Colégio Objetivo Camboinhas</span>
+          <span class="i-sub">Rua Prof. Álvaro Caetano, 908 — Niterói/RJ</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- QR Code de Inscrição -->
+    <div class="qr-register-col">
+      <img src="qr_code.svg" alt="QR Code">
+      <div class="qr-txt">
+        ESCANEIE PARA<br>GARANTIR SUA VAGA<br><span style="color:#B88A28; font-size:10px;">VAGAS LIMITADAS</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rodapé com Lema -->
+  <div class="card-footer">
+    <p>Informação, Planejamento e Segurança Jurídica para Decisões que Geram Resultados.</p>
+  </div>
+
+</body>
+</html>

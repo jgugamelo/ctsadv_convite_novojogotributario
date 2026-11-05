@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Banner 80x120cm — O Novo Jogo Tributário no Brasil (2ª Edição)</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    @page {
+      size: 80cm 120cm;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 1600px;
+      height: 2400px;
+      background-color: #FAF9F5;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #1E293B;
+      position: relative;
+      overflow: hidden;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Curva Elegante no Topo */
+    .top-navy-shape {
+      position: absolute;
+      top: -380px;
+      left: -200px;
+      width: 2000px;
+      height: 600px;
+      background: radial-gradient(circle at 50% 120%, #162846 0%, #0A1526 100%);
+      border-bottom: 7px solid #C59B3B;
+      border-radius: 50%;
+      z-index: 1;
+      box-shadow: 0 15px 35px rgba(10, 21, 38, 0.25);
+    }
+
+    /* Selo Dourado de 2ª Edição */
+    .top-badge-wrap {
+      position: absolute;
+      top: 50px;
+      left: 80px;
+      z-index: 10;
+    }
+
+    .badge-pill {
+      background: linear-gradient(135deg, #F3D37D 0%, #C59B3B 50%, #946F19 100%);
+      color: #0A1526;
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 2.5px;
+      padding: 10px 30px;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      border: 2px solid #FFF3D1;
+      text-transform: uppercase;
+    }
+
+    /* Container Global do Conteúdo */
+    .banner-body {
+      position: relative;
+      z-index: 5;
+      width: 1600px;
+      height: 2400px;
+      padding: 90px 80px 240px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    /* Cabeçalho: Título + Imagem Oficial */
+    .banner-hero-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 35px;
+      margin-bottom: 25px;
+    }
+
+    .hero-text-col {
+      flex: 1;
+      max-width: 920px;
+    }
+
+    .hero-h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 64px;
+      font-weight: 900;
+      color: #0A1526;
+      line-height: 1.05;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .hero-h1 .gold-word {
+      color: #B88A28;
+    }
+
+    .hero-h1-divider {
+      width: 480px;
+      height: 3px;
+      background: linear-gradient(90deg, #B88A28 0%, #ECC86A 60%, transparent 100%);
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    .hero-h1-divider::after {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: 0;
+      width: 9px;
+      height: 9px;
+      background: #B88A28;
+      border-radius: 50%;
+    }
+
+    .hero-subhead {
+      font-size: 26px;
+      font-weight: 900;
+      color: #0A1526;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .hero-desc {
+      font-size: 20px;
+      font-weight: 600;
+      color: #475569;
+      line-height: 1.35;
+      max-width: 860px;
+    }
+
+    .hero-img-col {
+      width: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-img-col img {
+      width: 450px;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 15px 30px rgba(10, 21, 38, 0.15));
+    }
+
+    /* Faixa de Apoio / Realização */
+    .sponsor-card {
+      border: 2px solid rgba(184, 138, 40, 0.35);
+      border-radius: 16px;
+      background: #FFFFFF;
+      padding: 18px 40px 22px 40px;
+      margin-bottom: 30px;
+      position: relative;
+      box-shadow: 0 6px 20px rgba(184, 138, 40, 0.08);
+    }
+
+    .sponsor-tag {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #FAF9F5;
+      padding: 0 20px;
+      font-size: 17px;
+      font-weight: 800;
+      color: #B88A28;
+      letter-spacing: 2.5px;
+    }
+
+    .sponsor-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 70px;
+    }
+
+    .logo-cts {
+      height: 60px;
+      width: auto;
+    }
+
+    .sponsor-sep {
+      width: 2px;
+      height: 50px;
+      background: linear-gradient(180deg, transparent, #B88A28, transparent);
+    }
+
+    .logo-obj {
+      height: 52px;
+      width: auto;
+    }
+
+    /* Cronograma / Linha do Tempo */
+    .timeline-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      margin-top: 5px;
+    }
+
+    /* Linha Vertical Conectora */
+    .timeline-wrap::before {
+      content: '';
+      position: absolute;
+      top: 35px;
+      bottom: 35px;
+      left: 215px;
+      width: 3px;
+      background: linear-gradient(180deg, #ECC86A 0%, #B88A28 50%, #8C6514 100%);
+      z-index: 2;
+    }
+
+    .t-row {
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 12px 0;
+      z-index: 3;
+    }
+
+    /* Linha divisória horizontal sutil */
+    .t-row::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 240px;
+      right: 0;
+      height: 1px;
+      background: rgba(184, 138, 40, 0.2);
+    }
+
+    .t-row:last-child::after {
+      display: none;
+    }
+
+    /* Ícone Redondo */
+    .t-icon-box {
+      width: 66px;
+      height: 66px;
+      border-radius: 50%;
+      background: #0A1526;
+      border: 3px solid #C59B3B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #F3D37D;
+      font-size: 26px;
+      box-shadow: 0 6px 15px rgba(10, 21, 38, 0.2);
+      flex-shrink: 0;
+    }
+
+    /* Horário */
+    .t-time-box {
+      width: 125px;
+      padding-left: 18px;
+      font-size: 26px;
+      font-weight: 900;
+      color: #0A1526;
+      flex-shrink: 0;
+    }
+
+    .t-time-box .time-small-range {
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.15;
+      display: block;
+    }
+
+    /* Ponto Dourado na Linha */
+    .t-bullet {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #C59B3B;
+      border: 3px solid #FFFFFF;
+      box-shadow: 0 0 0 2px #C59B3B;
+      margin-left: 8px;
+      margin-right: 25px;
+      flex-shrink: 0;
+      z-index: 4;
+    }
+
+    /* Detalhes da Palestra */
+    .t-info {
+      flex: 1;
+      padding-left: 5px;
+    }
+
+    .t-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 23px;
+      font-weight: 800;
+      color: #0A1526;
+      line-height: 1.2;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .t-text {
+      font-size: 16.5px;
+      color: #334155;
+      line-height: 1.3;
+      margin-bottom: 5px;
+    }
+
+    .t-speaker {
+      background: #F4EEDC;
+      border-left: 4px solid #B88A28;
+      padding: 4px 12px;
+      border-radius: 0 8px 8px 0;
+      display: inline-block;
+      font-size: 15.5px;
+      color: #0A1526;
+    }
+
+    .t-speaker .speaker-tag-name {
+      font-weight: 900;
+      color: #0A1526;
+    }
+
+    .t-speaker .speaker-tag-role {
+      color: #556277;
+      font-size: 14.5px;
+    }
+
+    /* Rodapé do Banner */
+    .banner-footer {
+      position: absolute;
+      bottom: -110px;
+      left: -100px;
+      width: 1800px;
+      height: 330px;
+      background: radial-gradient(circle at 50% 0%, #162846 0%, #060E1A 100%);
+      border-top: 7px solid #C59B3B;
+      border-radius: 50% 50% 0 0;
+      z-index: 10;
+      padding-top: 35px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #FFFFFF;
+      box-shadow: 0 -12px 40px rgba(0,0,0,0.35);
+    }
+
+    .footer-content {
+      width: 1440px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    .f-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .f-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 12px;
+      background: rgba(197, 155, 59, 0.2);
+      border: 2px solid #C59B3B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #F3D37D;
+      font-size: 26px;
+    }
+
+    .f-texts .f-label {
+      font-size: 15px;
+      font-weight: 800;
+      color: #F3D37D;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: block;
+    }
+
+    .f-texts .f-title {
+      font-size: 26px;
+      font-weight: 900;
+      color: #FFFFFF;
+      line-height: 1.1;
+    }
+
+    .f-texts .f-sub {
+      font-size: 17px;
+      color: #CBD5E1;
+      display: block;
+    }
+
+    .f-divider {
+      width: 2px;
+      height: 50px;
+      background: rgba(197, 155, 59, 0.4);
+    }
+
+    /* QR Code */
+    .f-qr-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #FFFFFF;
+      padding: 6px 14px;
+      border-radius: 10px;
+      border: 2px solid #C59B3B;
+    }
+
+    .f-qr-box img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .f-qr-box span {
+      font-size: 13px;
+      font-weight: 900;
+      color: #0A1526;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .f-motto {
+      font-size: 16px;
+      font-weight: 800;
+      color: #F3D37D;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Curva Superior Marinho -->
+  <div class="top-navy-shape"></div>
+
+  <!-- Selo Superior 2ª Edição -->
+  <div class="top-badge-wrap">
+    <div class="badge-pill">
+      <i class="fa-solid fa-crown"></i> EVENTO • 2ª EDIÇÃO
+    </div>
+  </div>
+
+  <!-- Corpo do Banner -->
+  <div class="banner-body">
+
+    <!-- Cabeçalho (Título + Imagem) -->
+    <div class="banner-hero-header">
+      <div class="hero-text-col">
+        <h1 class="hero-h1">
+          O NOVO JOGO<br>
+          TRIBUTÁRIO<br>
+          <span class="gold-word">NO BRASIL:</span>
+        </h1>
+        <div class="hero-h1-divider"></div>
+
+        <div class="hero-subhead">
+          COMO PREPARAR SUA EMPRESA PARA A NOVA REALIDADE FISCAL
+        </div>
+        <p class="hero-desc">
+          Reforma Tributária do Consumo, Reforma da Renda e os impactos práticos para empresários em 2026.
+        </p>
+      </div>
+
+      <div class="hero-img-col">
+        <img src="imagem.png" alt="O Novo Jogo Tributário no Brasil">
+      </div>
+    </div>
+
+    <!-- Faixa de Realização / Apoio -->
+    <div class="sponsor-card">
+      <div class="sponsor-tag">APOIO:</div>
+      <div class="sponsor-logos">
+        <img src="Nova Logo CTSADV.png" alt="CTSADV Advogados" class="logo-cts">
+        <div class="sponsor-sep"></div>
+        <img src="objetivo.png" alt="Colégio Objetivo Camboinhas" class="logo-obj">
+      </div>
+    </div>
+
+    <!-- Linha do Tempo / Cronograma Oficial -->
+    <div class="timeline-wrap">
+
+      <!-- 19h: Abertura -->
+      <div class="t-row">
+        <div class="t-icon-box"><i class="fa-solid fa-users"></i></div>
+        <div class="t-time-box">19h</div>
+        <div class="t-bullet"></div>
+        <div class="t-info">
+          <div class="t-title">ABERTURA INSTITUCIONAL</div>
+          <div class="t-text">
+            • Colégio Objetivo Camboinhas; &nbsp;&nbsp;• CTSADV Advogados;<br>
+            • Agradecimentos a todos os presentes e apresentação dos palestrantes por meio do Moderador: <strong>William Teodoro da Silva Filho</strong>.
+          </div>
+        </div>
+      </div>
+
+      <!-- 19h05: Painel 1 -->
+      <div class="t-row">
+        <div class="t-icon-box"><i class="fa-solid fa-arrow-trend-up"></i></div>
+        <div class="t-time-box">19h05</div>
+        <div class="t-bullet"></div>
+        <div class="t-info">
+          <div class="t-title">REFORMA TRIBUTÁRIA NA PRÁTICA</div>
+          <div class="t-text">
+            O que sua empresa precisa fazer ainda em 2026 para evitar riscos fiscais e preservar competitividade.
+          </div>
+          <div class="t-speaker">
+            <span style="font-weight: 800; font-size: 13px; color: #8C6514; text-transform: uppercase;">PALESTRANTE:</span>
+            <span class="speaker-tag-name">Leonardo Cursino</span>
+            <span class="speaker-tag-role">(Sócio da área de direito tributário no escritório Cursino & Teodoro da Silva Advogados)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 19h35 às 19h45: Perguntas -->
+      <div class="t-row">
+        <div class="t-icon-box"><i class="fa-solid fa-circle-question"></i></div>
+        <div class="t-time-box"><span class="time-small-range">19h35<br>às 19h45</span></div>
+        <div class="t-bullet"></div>
+        <div class="t-info">
+          <div class="t-title">PERGUNTAS SOBRE A PALESTRA</div>
+          <div class="t-text">Espaço aberto para esclarecimento de dúvidas dos participantes com o palestrante.</div>
+        </div>
+      </div>
+
+      <!-- 19h45 às 20h: Coffee Break -->
+      <div class="t-row">
+        <div class="t-icon-box"><i class="fa-solid fa-mug-hot"></i></div>
+        <div class="t-time-box"><span class="time-small-range">19h45<br>às 20h</span></div>
+        <div class="t-bullet"></div>
+        <div class="t-info">
+          <div class="t-title">COFFEE BREAK</div>
+          <div class="t-text">Momento reservado para café, relacionamento profissional e networking executivo.</div>
+        </div>
+      </div>
+
+      <!-- 20h: Painel 2 -->
+      <div class="t-row">
+        <div class="t-icon-box"><i class="fa-solid fa-calculator"></i></div>
+        <div class="t-time-box">20h</div>
+        <div class="t-bullet"></div>
+        <div class="t-info">
+          <div class="t-title">OS DESAFIOS CONTÁBEIS DA TRANSIÇÃO E OS IMPACTOS NA GESTÃO DAS EMPRESAS</div>
+          <div class="t-text">
+            Como a contabilidade será protagonista na adaptação das empresas ao novo sistema tributário, envolvendo escrituração fiscal, documentos fiscais eletrônicos, ERP, compliance e controles internos.
+          </div>
+          <div class="t-speaker">
+            <span style="font-weight: 800; font-size: 13px; color: #8C6514; text-transform: uppercase;">PALESTRANTES:</span>
+            <span class="speaker-tag-name">João Carlos Romualdo</span> e <span class="speaker-tag-name">Renata Targino</span>
+            <span class="speaker-tag-role">(Sócios da JCA Contadores)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 20h25: Painel 3 -->
+      <div class="t-row">
+        <div class="t-icon-box"><i class="fa-solid fa-people-roof"></i></div>
+        <div class="t-time-box">20h25</div>
+        <div class="t-bullet"></div>
+        <div class="t-info">
+          <div class="t-title">PLANEJAMENTO PATRIMONIAL, SUCESSÓRIO E HOLDINGS FAMILIARES</div>
+          <div class="t-text">
+            Como proteger o patrimônio empresarial, estruturar holdings familiares e planejar a sucessão com segurança jurídica, governança e continuidade dos negócios.
+          </div>
+          <div class="t-speaker">
+            <span style="font-weight: 800; font-size: 13px; color: #8C6514; text-transform: uppercase;">PALESTRANTE:</span>
+            <span class="speaker-tag-name">Karine Monteiro</span>
+            <span class="speaker-tag-role">(Sócia da área de direito empresarial no escritório Cursino & Teodoro da Silva Advogados)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 20h50 às 21h: Perguntas e Encerramento -->
+      <div class="t-row">
+        <div class="t-icon-box"><i class="fa-solid fa-comments"></i></div>
+        <div class="t-time-box"><span class="time-small-range">20h50<br>às 21h</span></div>
+        <div class="t-bullet"></div>
+        <div class="t-info">
+          <div class="t-title">PERGUNTAS E ENCERRAMENTO</div>
+          <div class="t-text">Debate final, dúvidas do público e encerramento oficial dos trabalhos.</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Rodapé Curvo em Azul Marinho -->
+  <div class="banner-footer">
+    <div class="footer-content">
+      
+      <!-- Bloco Data -->
+      <div class="f-item">
+        <div class="f-icon"><i class="fa-solid fa-calendar-day"></i></div>
+        <div class="f-texts">
+          <span class="f-label">DATA</span>
+          <span class="f-title">25/11/2026</span>
+          <span class="f-sub">(quarta-feira) • 19h</span>
+        </div>
+      </div>
+
+      <div class="f-divider"></div>
+
+      <!-- Bloco Local -->
+      <div class="f-item">
+        <div class="f-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="f-texts">
+          <span class="f-label">LOCAL</span>
+          <span class="f-title">COLÉGIO OBJETIVO</span>
+          <span class="f-sub">Rua Prof. Álvaro Caetano, 908 — Camboinhas, Niterói/RJ</span>
+        </div>
+      </div>
+
+      <div class="f-divider"></div>
+
+      <!-- Bloco QR Code -->
+      <div class="f-qr-box">
+        <img src="qr_code.svg" alt="QR Code Inscrição">
+        <span>ESCANEIE PARA<br>CREDENCIAMENTO</span>
+      </div>
+
+    </div>
+
+    <!-- Lema Institucional -->
+    <div class="f-motto">
+      INFORMAÇÃO, PLANEJAMENTO E SEGURANÇA JURÍDICA PARA DECISÕES QUE GERAM RESULTADOS.
+    </div>
+  </div>
+
+</body>
+</html>
